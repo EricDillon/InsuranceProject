@@ -11,13 +11,6 @@ public class BeanConfig {
 		viewResolver.setSuffix(".jsp");
 		return viewResolver;
 	}
-	@Bean(name = "viewResolver")
-	public InternalResourceViewResolver getViewResolver() {
-		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-		viewResolver.setPrefix("/WEB-INF/view/");
-		viewResolver.setSuffix(".jsp");
-		return viewResolver;
-	}
 
 	@Bean
 	public LocalSessionFactoryBean getSessionFactory() {
