@@ -1,3 +1,5 @@
+com.spring.beanConfig
+
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;

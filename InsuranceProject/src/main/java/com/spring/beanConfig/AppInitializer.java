@@ -1,3 +1,5 @@
+com.spring.beanConfig
+
 package com.spring;
 
 import javax.servlet.ServletContext;
