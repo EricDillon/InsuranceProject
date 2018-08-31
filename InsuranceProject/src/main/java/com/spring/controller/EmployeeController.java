@@ -1,4 +1,4 @@
-package com.spring.controller
+package com.spring.controller;
 
 public class EmployeeController {
 

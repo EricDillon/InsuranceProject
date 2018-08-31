@@ -1,6 +1,6 @@
-package com.spring.controller
+package com.spring.controller;
 
-import org.spring.controller
+import org.spring.controller;
 
 
 @Controller

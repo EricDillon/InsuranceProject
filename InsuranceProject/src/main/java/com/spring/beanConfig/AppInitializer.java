@@ -1,4 +1,4 @@
-package com.spring.beanConfig
+package com.spring.beanConfig;
 
 
 

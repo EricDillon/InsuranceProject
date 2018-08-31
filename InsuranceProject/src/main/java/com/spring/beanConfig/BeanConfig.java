@@ -1,4 +1,4 @@
-package com.spring.beanConfig
+package com.spring.beanConfig;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
