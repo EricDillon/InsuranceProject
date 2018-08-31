@@ -1,0 +1,56 @@
+package com.spring.dao;
+
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.spring.model.Claim;
+
+/*================================================================================================
+ * INSURERDAOIMPL
+ * 
+ * Implements the InsurerDao interface. This class performs the database operations
+ *================================================================================================ 
+ */
+
+@SuppressWarnings("deprecation")
+@Repository
+public class CustomerDaoImpl implements CustomerDao 
+{
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	public int addNewClaim(Claim c) 
+	{
+		int success=0;
+		try {
+			Session session=sessionFactory.openSession();
+			Transaction tx= session.beginTransaction();
+			success=(Integer)session.save(c);
+			tx.commit();
+			session.close();
+			
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		}
+		return success;
+
+	}
+	
+	public List<Customer> viewAllClaims() {
+		Session session=sessionFactory.openSession();
+		Transaction tx= session.beginTransaction();
+		Query<Claim> theQuery=  session.createQuery("from Claim", Claim.class);
+		List<Claim> claims = theQuery.getResultList();
+		tx.commit();
+		session.close();
+		return claims;
+	}
+
+}

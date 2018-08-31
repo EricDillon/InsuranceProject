@@ -1,0 +1,13 @@
+package com.spring.model;
+
+/*================================================================================================
+ * INSURER
+ * 
+ * Can register account, submit claims (even without an account), view claims
+ *================================================================================================ 
+ */
+
+public class Insurer extends User 
+{
+	List<Claim> claims;
+}

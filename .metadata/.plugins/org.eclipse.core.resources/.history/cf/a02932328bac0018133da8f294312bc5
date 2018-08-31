@@ -1,0 +1,33 @@
+package com.spring.model;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/*================================================================================================
+ * INSURER
+ * 
+ * Can register account, submit claims (even without an account), view claims
+ *================================================================================================ 
+ */
+
+@Entity
+@Table(name="assinsurance_cust_tbl")
+
+public class Customer extends User 
+{
+	List<Claim> claims;
+	List<Vehicle> vehicles;
+	private int policyNum;
+	private boolean active;
+
+	
+	public Customer() 
+	{
+		super();
+	}
+	
+	
+	
+}

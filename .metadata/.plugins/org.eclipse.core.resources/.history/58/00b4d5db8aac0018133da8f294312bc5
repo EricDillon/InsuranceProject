@@ -1,0 +1,9 @@
+package com.spring.model;
+
+public class Vehicle 
+{
+	private int id;
+	private int year;
+	private String make, model, liscenceId;
+
+}
