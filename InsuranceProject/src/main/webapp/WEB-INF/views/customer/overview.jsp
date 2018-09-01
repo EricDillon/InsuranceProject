@@ -13,6 +13,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
+//need to get passed a customer model
+
+<a href = "makeClaim.jsp">Make a Claim</a>
+<a href = "checkClaim.jsp">Check Claim Status</a>
+<a href = "myClaims.jsp">View MyClaims</a>
 
 </body>
 </html>

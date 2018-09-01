@@ -15,8 +15,8 @@
 <body>
 
 				<a href = "/employeeLogin.jsp" >Employee</a>
-   <sf:form action= "/overview" ModelAttribute = "" >
-   		UserName:<sf:input path="username" /><br>
+   <sf:form action= "/overview" ModelAttribute = "user" >
+   		Email:<sf:input path="email" /><br>
    		Password:<sf:input path="password"/><br>
    		<input type=submit value = "login"/> 
    		<input type="reset" value = "clear"/>
