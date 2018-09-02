@@ -13,6 +13,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<sf:form action = "/updateClaim.jsp" ModelAttribute = "claim">
+			Claim Id:<sf:input path="claimId"/>
+	 		<input type="Submit" value="Update Claim"/>
+ </sf:form>
 </body>
 </html>
