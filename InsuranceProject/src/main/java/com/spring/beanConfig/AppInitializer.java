@@ -1,6 +1,6 @@
-com.spring.beanConfig
+package com.spring.beanConfig;
 
-package com.spring;
+
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

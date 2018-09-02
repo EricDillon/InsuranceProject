@@ -13,13 +13,19 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
-<sf:form action= " " ModelAttribute ="" method = "">
-		<sf:input path=""/><br>
-		<sf:input path=""/><br>
-		<sf:input path=""/><br>
-		<sf:input path=""/><br>
-		<sf:input path=""/><br>
-		<sf:input path=""/><br>
+<sf:form action= "/overview.jsp" ModelAttribute ="claim" method = "post">
+		<%-- <sf:input path="claimId" placeholder = "Claim id"/><br> --%>
+		<sf:input path="claimPolicyNum" placeholder = "Policy Number"/><br>
+		<%-- <sf:select path="status">
+                <sf:option value="open">Open</sf:option>
+                <sf:option value="processing">Processing</sf:option>
+                <sf:option value="approved">Approved</sf:option>
+                <sf:option value="rejected">Rejected</sf:option>
+                <sf:option value="closed">closed</sf:option>
+            </sf:select> --%>
+		<sf:input type= "date" path="inspectionDate" placeholder = "Inspection Date"/><br>
+		<sf:input type= "date" path="claimDate"/><br>
+		<sf:input path="assessor"/><br>
 		<sf:input path=""/><br>
 		<input type=Submit value="Submit Claim">
 		<input type = "reset" value = "Clear">

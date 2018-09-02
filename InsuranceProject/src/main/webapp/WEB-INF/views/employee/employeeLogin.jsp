@@ -13,8 +13,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <body>
- <sf:form action= "/overview" ModelAttribute = "" >
-   		UserName:<sf:input path="username" /><br>
+ <sf:form action= "/employeeOverview.jsp" ModelAttribute = "employee" >
+   		Employee Email:<sf:input path="email" /><br>
    		Password:<sf:input path="password"/><br>
    		<input type=submit value = "login"/> 
    		<input type="reset" value = "clear"/>
