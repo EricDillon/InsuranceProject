@@ -1,6 +1,7 @@
 package com.spring.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 
@@ -8,29 +9,68 @@ import javax.persistence.Table;
  * EMPLOYEE
  * -----------------------------------------------------------------------------------------------
  * 
- * Can register account, submit claims (even without an account), view claims
+ * POJO class for Employee
  *================================================================================================ 
  */
 
 @Entity
 @Table(name="assinsurance_empl_tbl")
-public class Employee extends User 
+public class Employee
 {
-	private String title;
+	@Id
+	private int id;
+	private int role;
+	private boolean status;
+	private String username, password, email;
+	public Employee(int id, int role, boolean status, String username, String password, String email) {
+		super();
+		this.id = id;
+		this.role = role;
+		this.status = status;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+	}
 	
-
-	public Employee(int id, int phoneNum, String firstName, String lastName, String email, String password) {
-		super(id, phoneNum, firstName, lastName, email, password);
-		// TODO Auto-generated constructor stub
+	public int getId() {
+		return id;
 	}
-
-	public String getTitle() {
-		return title;
+	public void setId(int id) {
+		this.id = id;
 	}
-
-	public void setTitle(String title) {
-		this.title = title;
+	public int getRole() {
+		return role;
 	}
+	public void setRole(int role) {
+		this.role = role;
+	}
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
+	
 	
 
 }

@@ -10,13 +10,12 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.spring.model.Claim;
 import com.spring.model.Customer;
 
 /*================================================================================================
- * INSURERDAOIMPL
+ * CUSTOMER DAOIMPL
  * 
- * Implements the InsurerDao interface. This class performs the database operations
+ * Implements the CustomerDao interface. This class performs the database operations
  *================================================================================================ 
  */
 
@@ -69,7 +68,7 @@ public class CustomerDaoImpl implements CustomerDao
 		Customer c = (Customer) session.load(Customer.class, new Integer(id));
 		if (null != c)
 		{
-			c.setActive(false);
+			c.setStatus(false);
 			session.update(c);
 		}
 		tx.commit();

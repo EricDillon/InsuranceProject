@@ -4,6 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/*================================================================================================
+ * REPORT
+ * -----------------------------------------------------------------------------------------------
+ * 
+ * POJO class for Report
+ *================================================================================================ 
+ */
+
 @Entity
 @Table(name="assinsurance_rprt_tbl")
 public class Report {

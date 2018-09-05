@@ -1,75 +1,75 @@
 package com.spring.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /*================================================================================================
  * CUSTOMER
  * -----------------------------------------------------------------------------------------------
  * 
- * Can register account, submit claims (even without an account), view claims
+ * POJO class for Customer
  *================================================================================================ 
  */
 
 @Entity
 @Table(name="assinsurance_cust_tbl")
 
-public class Customer extends User 
+public class Customer 
 {
-	List<Claim> claims;
-	List<Vehicle> vehicles;
-	private int policyNum;
-	private boolean active;
+	@Id
+	private int id;
+	private String policyNum,email,username,password;
+	boolean status;
+	
 
-
-
-	public Customer(int id, int phoneNum, String firstName, String lastName, String email, String password) {
-		super(id, phoneNum, firstName, lastName, email, password);
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public List<Claim> getClaims() {
-		return claims;
-	}
-
-
-	public void setClaims(List<Claim> claims) {
-		this.claims = claims;
-	}
-
-
-	public List<Vehicle> getVehicles() {
-		return vehicles;
-	}
-
-
-	public void setVehicles(List<Vehicle> vehicles) {
-		this.vehicles = vehicles;
-	}
-
-
-	public int getPolicyNum() {
-		return policyNum;
-	}
-
-
-	public void setPolicyNum(int policyNum) {
+	public Customer(int id, String policyNum, String email, String username, String password, boolean status) {
+		super();
+		this.id = id;
 		this.policyNum = policyNum;
-	}
-
-
-	public boolean isActive() {
-		return active;
-	}
-
-
-	public void setActive(boolean active) {
-		this.active = active;
+		this.email = email;
+		this.username = username;
+		this.password = password;
+		this.status = status;
 	}
 	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getPolicyNum() {
+		return policyNum;
+	}
+	public void setPolicyNum(String policyNum) {
+		this.policyNum = policyNum;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public boolean isStatus() {
+		return status;
+	}
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
 	
 	
 }
