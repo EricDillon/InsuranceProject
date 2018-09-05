@@ -22,8 +22,8 @@ public class Claim
 	@Id
 	private int claimId;
 	
-	private int claimPolicyNum;
-	private String claimStatus;
+	private int claimPolicyNum, reportId;
+	private String claimStatus, description;
 	private Date inspectionDate,claimDate;
 	private int assessor;
 	
@@ -63,6 +63,18 @@ public class Claim
 	}
 	public void setAssessor(int assessor) {
 		this.assessor = assessor;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public int getReportId() {
+		return reportId;
+	}
+	public void setReportId(int reportId) {
+		this.reportId = reportId;
 	}
 	
 	
