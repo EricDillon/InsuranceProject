@@ -1,0 +1,16 @@
+package com.test;
+
+import com.spring.dao.CustomerDao;
+import com.spring.dao.CustomerDaoImpl;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		CustomerDao dao = new CustomerDaoImpl();
+		
+
+	}
+
+}

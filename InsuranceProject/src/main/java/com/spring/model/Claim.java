@@ -1,7 +1,5 @@
 package com.spring.model;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,8 +9,7 @@ import javax.persistence.Table;
  * CLAIM CLASS
  * -----------------------------------------------------------------------------------------------
  * 
- * This class contains data regarding a singular claim made by the Insurer. It is created
- * when an Insurer submits a new claim and can be modified by the ClaimOfficer class 
+ * This class is Nothing more than a POJO class for a claim.
  *================================================================================================ 
  */
 @Entity
@@ -20,50 +17,75 @@ import javax.persistence.Table;
 public class Claim 
 {
 	@Id
-	private int claimId;
+	private int id;
 	
-	private int claimPolicyNum;
-	private String claimStatus;
-	private Date inspectionDate,claimDate;
-	private int assessor;
-	
-	
-	public int getClaimId() {
-		return claimId;
+	private String policyNum;
+	private int reportId, status, assessorId;
+	private String claimDate,claimDescription,remark;
+	public Claim(int id, String policyNum, int reportId, int status, int assessorId, String claimDate,
+			String claimDescription, String remark) {
+		super();
+		this.id = id;
+		this.policyNum = policyNum;
+		this.reportId = reportId;
+		this.status = status;
+		this.assessorId = assessorId;
+		this.claimDate = claimDate;
+		this.claimDescription = claimDescription;
+		this.remark = remark;
 	}
-	public void setClaimId(int claimId) {
-		this.claimId = claimId;
+	public int getId() {
+		return id;
 	}
-	public int getClaimPolicyNum() {
-		return claimPolicyNum;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public void setClaimPolicyNum(int claimPolicyNum) {
-		this.claimPolicyNum = claimPolicyNum;
+	public String getPolicyNum() {
+		return policyNum;
 	}
-	public String getClaimStatus() {
-		return claimStatus;
+	public void setPolicyNum(String policyNum) {
+		this.policyNum = policyNum;
 	}
-	public void setClaimStatus(String claimStatus) {
-		this.claimStatus = claimStatus;
+	public int getReportId() {
+		return reportId;
 	}
-	public Date getInspectionDate() {
-		return inspectionDate;
+	public void setReportId(int reportId) {
+		this.reportId = reportId;
 	}
-	public void setInspectionDate(Date inspectionDate) {
-		this.inspectionDate = inspectionDate;
+	public int getStatus() {
+		return status;
 	}
-	public Date getClaimDate() {
+	public void setStatus(int status) {
+		this.status = status;
+	}
+	public int getAssessorId() {
+		return assessorId;
+	}
+	public void setAssessorId(int assessorId) {
+		this.assessorId = assessorId;
+	}
+	public String getClaimDate() {
 		return claimDate;
 	}
-	public void setClaimDate(Date claimDate) {
+	public void setClaimDate(String claimDate) {
 		this.claimDate = claimDate;
 	}
-	public int getAssessor() {
-		return assessor;
+	public String getClaimDescription() {
+		return claimDescription;
 	}
-	public void setAssessor(int assessor) {
-		this.assessor = assessor;
+	public void setClaimDescription(String claimDescription) {
+		this.claimDescription = claimDescription;
 	}
+	public String getRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+	
+	
+	
+	
 	
 	
 	
