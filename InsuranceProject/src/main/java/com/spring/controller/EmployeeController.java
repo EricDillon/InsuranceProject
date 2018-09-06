@@ -1,29 +1,30 @@
 package com.spring.controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 public class EmployeeController {
 
-	@RequestMapping
-	public String empLogin("/employeeLogin") {
+	@RequestMapping("/employeeLogin")
+	public String empLogin() {
 		return "employeeLogin";
 	}
 
-	@RequestMapping
-	public String viewClaims("/viewClaims") {
+	@RequestMapping("/viewClaims")
+	public String viewClaims() {
 		return "viewClaims";
 	}
 
-	@RequestMapping
-	public String updateClaim("/updateClaim") {
+	@RequestMapping("/updateClaim") 
+	public String updateClaim() {
 		return "updateClaim";
 	}
 
-	@RequestMapping
-	public String viewReports("/viewReports") {
+	@RequestMapping("/viewReports")
+	public String viewReports() {
 		return "viewReports";
 	}
 
-	@RequestMapping
-		public String updateReport("/updateReport") {
+	@RequestMapping("/updateReport")
+		public String updateReport() {
 			return "updateReport";
 	}
 	

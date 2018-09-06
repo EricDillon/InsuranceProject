@@ -1,15 +1,17 @@
 package com.spring.beanConfig;
-
+import java.util.Properties;
+import org.springframework.context.annotation.Bean;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
 
 public class BeanConfig {
 
 	@Bean(name = "viewResolver")
 	public InternalResourceViewResolver getViewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-		viewResolver.setPrefix("/WEB-INF/view/");
+		viewResolver.setPrefix("/WEB-INF/views/");
 		viewResolver.setSuffix(".jsp");
 		return viewResolver;
 	}
@@ -32,12 +34,12 @@ public class BeanConfig {
 		return dataSource;
 	}
 
-	private Properties hibernateProperties() {
+	 Properties hibernateProperties() {
 		return new Properties() {
 			setProperty("hibernate.hbm2ddl.auto", "update");
 			setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
 			setProperty("hibernate.show_sql", "true");
 		}
-	}
+	};
 
 }
