@@ -56,10 +56,6 @@ public class CustomerController {
 	public String submitClaim(@ModelAttribute("claim") Claim cl, Model mod) 
 	{
 		cs.addClaim(cl);
-		
-		Customer c = new Customer();
-		mod.addAttribute(c);
-		
 		return "index";
 	}
 

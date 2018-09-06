@@ -26,10 +26,9 @@ public class ClaimDaoImpl implements ClaimDao {
 		try {
 			Session session=sessionFactory.openSession();
 			Transaction tx= session.beginTransaction();
-			/*Query q = session.createQuery("claim_id_seq.nextval");
+			Query q = session.createQuery("claim_id_seq.nextval");
 			int i = q.executeUpdate();
-			System.out.println(i);
-			c.setId(i);*/
+			c.setId(id);
 			success=(Integer)session.save(c);
 			tx.commit();
 			session.close();

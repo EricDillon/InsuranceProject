@@ -53,13 +53,9 @@ public class CustomerController {
 	}
 
 	@RequestMapping("/submitClaim")
-	public String submitClaim(@ModelAttribute("claim") Claim cl, Model mod) 
+	public String submitClaim(@ModelAttribute("claim") Claim cl) 
 	{
 		cs.addClaim(cl);
-		
-		Customer c = new Customer();
-		mod.addAttribute(c);
-		
 		return "index";
 	}
 

@@ -1,9 +1,6 @@
 package com.spring.dao;
 
-import java.sql.PreparedStatement;
 import java.util.List;
-
-import javax.persistence.Query;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -17,6 +14,7 @@ import com.spring.model.Claim;
 @Repository
 public class ClaimDaoImpl implements ClaimDao {
 
+	private static int claimID = 0;
 	@Autowired
 	private SessionFactory sessionFactory;
 	
@@ -26,10 +24,6 @@ public class ClaimDaoImpl implements ClaimDao {
 		try {
 			Session session=sessionFactory.openSession();
 			Transaction tx= session.beginTransaction();
-			/*Query q = session.createQuery("claim_id_seq.nextval");
-			int i = q.executeUpdate();
-			System.out.println(i);
-			c.setId(i);*/
 			success=(Integer)session.save(c);
 			tx.commit();
 			session.close();
