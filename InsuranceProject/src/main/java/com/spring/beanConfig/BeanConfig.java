@@ -3,10 +3,16 @@ package com.spring.beanConfig;
 import java.util.Properties;
 import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackages = "com.spring")
 public class BeanConfig {
 
 	@Bean(name = "viewResolver")
@@ -43,6 +49,7 @@ public class BeanConfig {
 			setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
 			setProperty("hibernate.show_sql", "true");
 		}
-	};
+		};
+	}
 
 }

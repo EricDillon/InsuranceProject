@@ -1,0 +1,44 @@
+package com.spring.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class CustomerController {
+	
+
+	@RequestMapping("/")
+	public String index(Model model) 
+	{
+		
+		return "index";
+	}
+	
+	@RequestMapping("/clientLogin")
+	public String clientLogin() {
+		return "clientLogin";
+	}
+	
+	@RequestMapping("/overview")
+	public String overview() {
+		return "overview";
+	}
+
+	@RequestMapping("/makeclaim")
+	public String makeClaim() {
+		return "makeClaim";
+	}
+	
+	@RequestMapping("/checkClaim")
+	public String checkClaim() {
+		return "checkClaim";
+	}
+	
+	@RequestMapping("/myClaims")
+	public String myClaim() {
+		return "myClaims";
+	}
+
+
+}

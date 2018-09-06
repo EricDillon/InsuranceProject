@@ -34,6 +34,16 @@ public class Claim
 		this.claimDescription = claimDescription;
 		this.remark = remark;
 	}
+	
+	
+	
+	
+	public Claim() {
+	}
+
+
+
+
 	public int getId() {
 		return id;
 	}

@@ -14,14 +14,17 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="assinsurance_cust_tbl")
-
 public class Customer 
 {
 	@Id
 	private int id;
 	private String policyNum,email,username,password;
 	boolean status;
-	
+
+	public Customer()
+	{
+		
+	}
 
 	public Customer(int id, String policyNum, String email, String username, String password, boolean status) {
 		super();

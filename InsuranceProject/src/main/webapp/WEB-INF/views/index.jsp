@@ -14,14 +14,14 @@
 </head>
 <body>
 
-				<a href = "/employeeLogin.jsp" >Employee</a>
-   <sf:form action= "/overview" ModelAttribute = "user" >
+				<a href = "/employeeLogin" >Employee</a>
+   <sf:form action= "/overview" modelAttribute = "customer" >
    		Email:<sf:input path="email" /><br>
    		Password:<sf:input path="password"/><br>
    		<input type=submit value = "login"/> 
    		<input type="reset" value = "clear"/>
     </sf:form>
     
-    <a href = "/makeClaim.jsp">Make a Claim</a>
+    <a href = "makeclaim">Make a Claim</a>
 </body>
 </html>
