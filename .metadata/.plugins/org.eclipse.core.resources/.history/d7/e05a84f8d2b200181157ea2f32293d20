@@ -52,16 +52,6 @@ public class CustomerDaoImpl implements CustomerDao
 		session.close();
 		return claims;
 	}
-	
-	public Customer getCustomer(String username)
-	{
-		Session session=sessionFactory.openSession();
-		Transaction tx= session.beginTransaction();
-		Query<Customer> theQuery=  session.createQuery("from Customer where username = '" + username + "'", Customer.class);
-		Customer c = theQuery.getSingleResult();
-		session.close();
-		return c;
-	}
 
 	public int updateCustomer(Customer c) {
 		Session session=sessionFactory.openSession();

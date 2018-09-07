@@ -36,7 +36,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	}
 
 	public List<Employee> getEmployees() {
-		// Not needed according to others
+		// TODO Auto-generated method stub
 		return null;
 	}
 
