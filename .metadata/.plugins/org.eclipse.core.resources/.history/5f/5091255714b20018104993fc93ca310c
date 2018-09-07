@@ -1,0 +1,13 @@
+package com.spring.service;
+
+import com.spring.model.Customer;
+
+public class CustomerServiceImpl implements CustomerService
+{
+
+	public int addCustomer(Customer c) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

@@ -1,6 +1,0 @@
-package com.spring.model;
-
-public class Insurer extends User 
-{
-
-}

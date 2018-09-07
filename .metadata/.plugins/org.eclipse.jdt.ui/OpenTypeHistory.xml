@@ -2,4 +2,5 @@
 <typeInfoHistroy>
 <typeInfo handle="=InsuranceProject/C:\/Users\/Eric\/.m2\/repository\/org\/hibernate\/hibernate-core\/5.3.1.Final\/hibernate-core-5.3.1.Final.jar&lt;org.hibernate.tuple(Instantiator.class[Instantiator" modifiers="1537" timestamp="1535041814004"/>
 <typeInfo handle="=InsuranceProject/C:\/Users\/Eric\/.m2\/repository\/org\/springframework\/spring-beans\/5.0.6.RELEASE\/spring-beans-5.0.6.RELEASE.jar&lt;org.springframework.beans.factory.support(InstantiationStrategy.class[InstantiationStrategy" modifiers="1537" timestamp="1535384739923"/>
+<typeInfo handle="=InsuranceProject/src\/main\/java&lt;com.spring.dao{ClaimDao.java[ClaimDao" modifiers="513" timestamp="1536265093279"/>
 </typeInfoHistroy>

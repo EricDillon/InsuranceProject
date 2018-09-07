@@ -1,7 +1,0 @@
-package com.spring.dao;
-
-public interface InsurerDao {
-	
-	public void addNewClaim(Claim c);
-
-}

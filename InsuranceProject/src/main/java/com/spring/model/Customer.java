@@ -18,7 +18,7 @@ public class Customer
 {
 	@Id
 	private int id;
-	private String policyNum,email,username,password;
+	private String policyNum,email,username,password, firstName, lastName;
 	boolean status;
 
 	public Customer()
@@ -35,8 +35,22 @@ public class Customer
 		this.password = password;
 		this.status = status;
 	}
-	
-	
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	public int getId() {
 		return id;
 	}

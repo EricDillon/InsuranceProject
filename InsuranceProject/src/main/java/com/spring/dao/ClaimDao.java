@@ -8,4 +8,6 @@ public interface ClaimDao
 {
 	public int addClaim(Claim c);
 	public List<Claim> getClaims();
+	public List<Claim> getClaims(String policyNum);
+	public Claim getClaim(int id);
 }

@@ -9,5 +9,7 @@ public interface ClaimService
 	public int addClaim(Claim c);
 	
 	public List<Claim> viewClaims();
+	public List<Claim> viewClaims(String policyNum);
+	public Claim getClaim(int id);
 	
 }

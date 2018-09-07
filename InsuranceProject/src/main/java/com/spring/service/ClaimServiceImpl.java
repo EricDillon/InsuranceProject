@@ -8,20 +8,41 @@ import org.springframework.stereotype.Service;
 import com.spring.dao.ClaimDao;
 import com.spring.model.Claim;
 
+
+/*================================================================================================
+ * ClaimServiceImpl
+ * -----------------------------------------------------------------------------------------------
+ * 
+ * This class pretty much just calls the ClaimDao methods. Implements all
+ * methods in the ClaimService interface
+ *================================================================================================ 
+ */
+
+
 @Service
 public class ClaimServiceImpl implements ClaimService 
 {
 	@Autowired
 	ClaimDao dao;
 	
-	public int addClaim(Claim c) {
-		// TODO Auto-generated method stud
+	public int addClaim(Claim c) 
+	{
 		return dao.addClaim(c);
 	}
 
-	public List<Claim> viewClaims() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Claim> viewClaims() 
+	{
+		return dao.getClaims();
+	}
+
+	public List<Claim> viewClaims(String policyNum) 
+	{
+		return dao.getClaims(policyNum);
+	}
+
+	public Claim getClaim(int id) 
+	{
+		return dao.getClaim(id);
 	}
 
 }

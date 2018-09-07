@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * CLAIM CLASS
  * -----------------------------------------------------------------------------------------------
  * 
- * This class is Nothing more than a POJO class for a claim.
+ * This class is Nothing more than a POJO class for a claim. Does nothing by itself.
  *================================================================================================ 
  */
 @Entity
@@ -37,13 +37,8 @@ public class Claim
 		this.claimDescription = claimDescription;
 		this.remark = remark;
 	}
-	
-	
-	
-	
 	public Claim() {
 	}
-
 
 
 

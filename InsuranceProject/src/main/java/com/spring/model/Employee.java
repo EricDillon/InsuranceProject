@@ -21,7 +21,7 @@ public class Employee
 	private int id;
 	private int role;
 	private boolean status;
-	private String username, password, email;
+	private String username, password, email, firstname,lastName;
 	public Employee(int id, int role, boolean status, String username, String password, String email) {
 		super();
 		this.id = id;
@@ -32,6 +32,19 @@ public class Employee
 		this.email = email;
 	}
 	
+	public String getFirstname() {
+		return firstname;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 	public int getId() {
 		return id;
 	}
