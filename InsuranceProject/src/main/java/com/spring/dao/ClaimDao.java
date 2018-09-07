@@ -3,6 +3,7 @@ package com.spring.dao;
 import java.util.List;
 
 import com.spring.model.Claim;
+import com.spring.model.Report;
 
 public interface ClaimDao 
 {

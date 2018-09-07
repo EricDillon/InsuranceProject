@@ -1,0 +1,45 @@
+package com.spring.dao;
+
+import java.util.List;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.spring.model.Report;
+
+@Repository
+public class ReportDaoImpl implements ReportDao {
+
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	public int addReport(Report r) {
+		// TODO Auto-generated method stub
+		int success=0;
+		try {
+			Session session=sessionFactory.openSession();
+			Transaction tx= session.beginTransaction();
+			
+			success=(Integer)session.save(c);
+			tx.commit();
+			session.close();
+			
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		}
+		return success;
+	}
+
+	public List<Report> getReports() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Report getReport(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,24 @@
+package com.spring.dao;
+
+import java.util.List;
+
+import com.spring.model.Report;
+
+public class ReportDaoImpl implements ReportDao {
+
+	public int addReport(Report r) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public List<Report> getReports() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Report getReport(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
