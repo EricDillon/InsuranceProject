@@ -14,5 +14,16 @@
 </head>
 <body>
 
+			<!--   String email, String username, String password, 	 -->
+   <sf:form action= "/regSuccess" modelAttribute = "customer" >
+   		First Name: <sf:input path="firstName" /> &emsp; Last Name: <sf:input path="lastName" />
+   		Email:<sf:input path="email" /><br>
+   		Enter Password:<sf:input path="password"/><br>
+   		Re-enter Password:<sf:input path="password"/><br>
+   		<input type=submit value = "login"/> 
+   		<input type="reset" value = "clear"/>
+    </sf:form>
+    
+   
 </body>
 </html>
