@@ -14,8 +14,6 @@ import javax.persistence.Table;
  * This class is Nothing more than a POJO class for a claim. Does nothing by itself.
  *================================================================================================ 
  */
-
-//TEST!!
 @Entity
 @Table(name="assinsurance_claim_tbl")
 public class Claim 
