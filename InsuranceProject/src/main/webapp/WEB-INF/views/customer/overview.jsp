@@ -43,6 +43,8 @@
                    <button type="Submit"  class="btn btn-danger btn-block"> <h2>Make A Claim</h2></button>
                 </form><br><br>
                  <form action = "checkClaim">
+                     <span class="input-group-addon">Claim ID:</span>
+                     <input id="msg" type="text" class="form-control" name="msg" placeholder="12345678">
                    <button type="Submit"  class="btn btn-warning btn-block"> <h2>Check Claim Status</h2></button>
                 </form><br><br>
                 <form action = "myClaims">
