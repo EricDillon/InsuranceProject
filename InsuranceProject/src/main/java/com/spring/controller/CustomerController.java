@@ -30,7 +30,6 @@ public class CustomerController {
 		model.addAttribute("password", customer.getPassword());
 		
 		return "index";
-
 	}
 
 //	@RequestMapping("/clientLogin")
