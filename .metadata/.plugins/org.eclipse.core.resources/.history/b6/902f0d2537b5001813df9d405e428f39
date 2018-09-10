@@ -8,7 +8,7 @@ public interface CustomerDao {
 	
 	public int addNewCustomer(Customer c);
 	public List<Customer> viewAllCustomers();
-	public Customer getCustomer(String username, String password);
+	public Customer getCustomer(String username);
 	public int updateCustomer(Customer c);
 	public int inactiveCustomer(int id);
 	
