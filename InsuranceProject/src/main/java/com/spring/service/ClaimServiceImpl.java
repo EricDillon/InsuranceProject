@@ -18,7 +18,7 @@ import com.spring.model.Claim;
  *================================================================================================ 
  */
 
-Hello
+
 @Service
 public class ClaimServiceImpl implements ClaimService 
 {
