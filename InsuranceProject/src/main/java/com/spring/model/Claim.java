@@ -15,7 +15,7 @@ import javax.persistence.Table;
  *================================================================================================ 
  */
 
-//TEST!!
+//OH GOD HELP ME!!
 @Entity
 @Table(name="assinsurance_claim_tbl")
 public class Claim 
