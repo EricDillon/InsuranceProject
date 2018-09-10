@@ -30,7 +30,7 @@ public class CustomerController {
 	
 	@RequestMapping("/overview")
 	public String overview() {
-		return "overview";
+		return "customer/overview";
 	}
 
 	@RequestMapping("/makeclaim")
