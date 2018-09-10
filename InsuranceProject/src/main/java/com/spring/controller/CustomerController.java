@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.spring.service.*;
 
 import com.spring.model.*;
@@ -17,8 +19,11 @@ import com.spring.model.*;
 public class CustomerController {
 
 	@Autowired
-	ClaimService cs;
-
+	ClaimService claimService;
+	
+	@Autowired
+	CustomerService customerService;
+	
 	@RequestMapping("/")
 	public String index(Model model) {
 		Customer c = new Customer();
@@ -34,18 +39,13 @@ public class CustomerController {
 		
 		return "index";
 	}
-
-//	@RequestMapping("/clientLogin")
-//	public String clientLogin(@ModelAttribute("customer") Customer customer, Model model) {
-//		model.
-//		return "clientLogin";
-//	}
 	
 	  @RequestMapping("/clientLogin")
 	  public String clientLogin(@ModelAttribute("customer") Model model, 
 			  Customer customer) {
 		  model.addAttribute(customer.getUsername());
 		  model.addAttribute(customer.getPassword());
+		  overview(customer.getUsername(), customer.getPassword());
 		return "overview";
 	   
 	       
@@ -53,33 +53,38 @@ public class CustomerController {
 	}
 
 	@RequestMapping("/overview")
-	public String overview() {
+	public String overview(String username, String password) {
+		customerService.getCustomer(username, password);
 		return "overview";
 	}
 
-	@RequestMapping("/makeclaim")
-	public String makeClaim(Model mod) {
-
-		mod.addAttribute(new Claim());
-
+	@RequestMapping(value="/makeclaim", method=RequestMethod.POST)
+	public String makeClaim(@ModelAttribute("claim") Model model) {
+		claimService.addClaim(new Claim());
 		return "customer/makeClaim";
 	}
 
 	@RequestMapping("/checkClaim")
-	public String checkClaim() {
+	public String checkClaim(@ModelAttribute("claim") Model model) {
+		
+		//THIS NEEDS TO BE CHANGED
+		int id = 0;
+		claimService.getClaim(id);
+		//THIS NEEDS TO BE CHANGED
+		
 		return "checkClaim";
 	}
 
 	@RequestMapping("/myClaims")
 	public String myClaim(Model model) {
-		List<Claim> claims = cs.viewClaims();
+		List<Claim> claims = claimService.viewClaims();
 		model.addAttribute("claims", claims);
 		return "myClaims";
 	}
 
 	@RequestMapping("/submitClaim")
 	public String submitClaim(@ModelAttribute("claim") Claim cl, Model mod) {
-		cs.addClaim(cl);
+		claimService.addClaim(cl);
 
 		Customer c = new Customer();
 		mod.addAttribute(c);
