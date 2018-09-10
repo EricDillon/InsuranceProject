@@ -5,7 +5,7 @@ import java.util.List;
 import com.spring.model.Employee;
 public interface EmployeeService {
 
-	public int addEmployee(Employee e);
+	public int addEmployee(Employee c);
 		
 		
 		public List<Employee> viewEmployee();
