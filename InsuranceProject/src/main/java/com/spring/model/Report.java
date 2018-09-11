@@ -22,11 +22,13 @@ public class Report {
 	private int id;
 	
 	private String descr;
+	private double repairCost;
 
-	public Report(int id, String descr) {
+	public Report(int id, String descr, double repairCost) {
 		super();
 		this.id = id;
 		this.descr = descr;
+		this.repairCost = repairCost;
 	}
 
 	public int getId() {
@@ -44,6 +46,16 @@ public class Report {
 	public void setDescr(String descr) {
 		this.descr = descr;
 	}
+
+	public double getRepairCost() {
+		return repairCost;
+	}
+
+	public void setRepairCost(double repairCost) {
+		this.repairCost = repairCost;
+	}
+	
+	
 	
 	
 

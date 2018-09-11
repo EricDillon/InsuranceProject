@@ -23,12 +23,12 @@ public class CustomerServiceImpl implements CustomerService
 
 	public List<Customer> viewCustomer(String policyNum) 
 	{
-		return (List<Customer>) dao.getCustomer(policyNum);
+		return null; //(List<Customer>) dao.getCustomer(policyNum);
 	}
 
 	public Customer getCustomer(String username, String password) 
 	{
-		return dao.getCustomer(username);
+		return dao.getCustomer(username,password);
 	
 	
 	}
