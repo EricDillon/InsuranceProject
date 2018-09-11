@@ -23,7 +23,7 @@ public class CustomerServiceImpl implements CustomerService
 
 	public List<Customer> viewCustomer(String policyNum) 
 	{
-		return null; //(List<Customer>) dao.getCustomer(policyNum);
+		return dao.getCustomers(policyNum); //(List<Customer>) dao.getCustomer(policyNum);
 	}
 
 	public Customer getCustomer(String username, String password) 
@@ -36,7 +36,7 @@ public class CustomerServiceImpl implements CustomerService
 
 	public List<Customer> viewCustomer() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.viewAllCustomers();
 	}
 
 }

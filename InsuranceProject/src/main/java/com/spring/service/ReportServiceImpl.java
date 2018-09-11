@@ -12,20 +12,20 @@ import com.spring.model.Report;
 public class ReportServiceImpl implements ReportService{
 
 	@Autowired
-	
+	ReportDao dao;
 	public int addReport(Report r) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.addReport(r);
 	}
 
 	public List<Report> getReports() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getReports();
 	}
 
 	public Report getReport(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getReport(id);
 	}
 
 }

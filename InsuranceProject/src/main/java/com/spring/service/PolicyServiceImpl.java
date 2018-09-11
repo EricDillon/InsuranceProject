@@ -11,24 +11,28 @@ import com.spring.model.Policy;
 public class PolicyServiceImpl implements PolicyService {
 
 	@Autowired
+	PolicyDao dao;
+	
 	public int addPolicy(Policy p) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.addPolicy(p);
 	}
 
 	public List<Policy> getPolicies() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getPolicies();
 	}
 
 	public Policy getPolicy(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getPolicy(id);
 	}
 
-	public Policy getPolicy(String policyNum) {
+	public Policy  getPolicy(String policyNum) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getPolicy(policyNum);
 	}
+
+	
 
 }

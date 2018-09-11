@@ -21,17 +21,17 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	public List<Employee> viewEmployee() {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getEmployees();
 	}
 
 	public List<Employee> viewEmployee(String policyNum) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getEmployees();
 	}
 
 	public Employee getEmployee(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.getEmployees(id);
 	}
 
 	public Employee getEmployee(String username, String password) {
