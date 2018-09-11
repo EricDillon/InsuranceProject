@@ -60,10 +60,9 @@ public class CustomerController {
 	}
 
 
-	@RequestMapping(value="/makeclaim")
-	public String makeClaim( Model model) {
-//		claimService.addClaim(new Claim());
-		model.addAttribute(new Claim());
+	@RequestMapping(value="/makeclaim", method=RequestMethod.POST)
+	public String makeClaim(@ModelAttribute("claim") Model model) {
+		claimService.addClaim(new Claim());
 		return "customer/makeClaim";
 	}
 
