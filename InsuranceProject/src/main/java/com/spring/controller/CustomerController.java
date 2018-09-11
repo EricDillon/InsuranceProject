@@ -23,10 +23,10 @@ public class CustomerController {
 		return "index";
 	}
 	
-	@RequestMapping("/clientLogin")
-	public String clientLogin() {
-		return "clientLogin";
-	}
+//	@RequestMapping("/clientLogin")
+//	public String clientLogin() {
+//		return "clientLogin";
+//	}
 	
 	@RequestMapping("/overview")
 	public String overview() {
