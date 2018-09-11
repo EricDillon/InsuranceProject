@@ -3,6 +3,7 @@ import com.spring.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.spring.service.EmployeeService;
@@ -16,8 +17,18 @@ public class EmployeeController {
 	Employee e;
 
 	@RequestMapping("/employeeLogin")
-	public String empLogin(Model m) {
+	public String empLogin(@ModelAttribute("employee") Model model, 
+			Employee employee) {
+		model.addAttribute(employee.getUsername());
+		  model.addAttribute(employee.getPassword());
+		  
 		return "employee/employeeLogin";
+	}
+	
+	@RequestMapping("/employeeOverview")
+	public String employeeOverview() {
+		return "employee/employeeOverview";
+		
 	}
 	
 	@RequestMapping("/viewClaims")
