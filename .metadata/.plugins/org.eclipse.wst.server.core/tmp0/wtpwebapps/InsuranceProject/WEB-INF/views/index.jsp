@@ -15,7 +15,7 @@
 </head>
 <body style = "background-image: url(https://cdn.pixabay.com/photo/2017/06/27/11/48/team-spirit-2447163_960_720.jpg);">
 <div class = " frosted text-right">
-   <a href = "/employeeLogin" >Employee Login</a>
+   <a href = "employeeLogin" >Employee Login</a>
 </div>
 <div class="jumbotron text-center banner frosted " >
   <h1>Assure Insurance </h1>
