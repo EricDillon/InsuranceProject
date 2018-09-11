@@ -38,6 +38,7 @@
             <tr><td><Button type=Submit class= "btn btn-success btn-lg" >Submit Claim</Button></td>
                 <td><Button type="reset" class= "btn btn-info btn-lg" >Clear Claim</Button></td></tr>
 		</table>
+		
 
 </sf:form>
      </div>

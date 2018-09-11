@@ -36,7 +36,8 @@ public class BeanConfig {
 	public DataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
+		try{dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");}
+		catch(Exception e) {dataSource.setUrl("jdbc:oracle:thin:@localhost:49160:xe");}
 		dataSource.setUsername("hr");
 		dataSource.setPassword("hr");
 		return dataSource;
