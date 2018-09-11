@@ -87,9 +87,4 @@ public class CustomerDaoImpl implements CustomerDao
 		return 0;
 	}
 
-	public List<Customer> getCustomers(String policyNum) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

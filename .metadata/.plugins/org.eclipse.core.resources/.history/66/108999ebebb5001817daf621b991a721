@@ -54,14 +54,14 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	
 	public Employee getEmployee(int id) {
 		// TODO Auto-generated method stub
-		Employee e;
+		List<Employee> claims;
 		Session session=sessionFactory.openSession();
 		Transaction tx= session.beginTransaction();
 		Query<Employee> theQuery =  session.createQuery("from Employee where id =" + id, Employee.class);
-		e= theQuery.getSingleResult();
+		claims= theQuery.getResultList();
 		tx.commit();
 		session.close();
-		return e;
+		return claims;
 	}
 
 }

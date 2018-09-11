@@ -31,7 +31,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	public Employee getEmployee(int id) {
 		// TODO Auto-generated method stub
-		return dao.getEmployee(id);
+		return dao.getEmployees(id);
 	}
 
 	public Employee getEmployee(String username, String password) {
