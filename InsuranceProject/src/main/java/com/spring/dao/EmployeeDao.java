@@ -10,7 +10,7 @@ public interface EmployeeDao
 	public Employee login(String username, String password);
 	public List<Employee> getEmployees();
 	public List<Employee> getEmployees(int role);
-	
+	public Employee getEmployee(int id);
 	
 	
 }

@@ -53,9 +53,14 @@ public class CustomerController {
 	}
 
 	@RequestMapping("/overview")
+<<<<<<< HEAD
 	public String overview(String username, String password) {
 		customerService.getCustomer(username, password);
 		return "overview";
+=======
+	public String overview() {
+		return "customer/overview";
+>>>>>>> refs/remotes/origin/master
 	}
 
 	@RequestMapping(value="/makeclaim", method=RequestMethod.POST)
