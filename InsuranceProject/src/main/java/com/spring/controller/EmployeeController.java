@@ -12,9 +12,7 @@ public class EmployeeController {
 	
 	@Autowired
 	EmployeeService employeeService;
-	
-	@Autowired
-	Employee e;
+
 
 	@RequestMapping("/employeeLogin")
 	public String empLogin(@ModelAttribute("employee") Model model, 
