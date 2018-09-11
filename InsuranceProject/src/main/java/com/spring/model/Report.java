@@ -24,6 +24,10 @@ public class Report {
 	private String descr;
 	private double repairCost;
 
+	public Report()
+	{
+		
+	}
 	public Report(int id, String descr, double repairCost) {
 		super();
 		this.id = id;

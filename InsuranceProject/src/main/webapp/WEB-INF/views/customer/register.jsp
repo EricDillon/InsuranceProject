@@ -36,7 +36,7 @@
        <label>Last Name:</label> <sf:input path="lastName" /><br>
    		<label>Email:</label><sf:input path="email" /><br>
    		<label>Enter Password:</label><sf:input path="password"/><br>
-       <label>Re-enter Password:</label><sf:input path="password"/><br>
+       <label>Re-enter Password:</label><sf:input path=""/><br>
    	    <Button type=Submit class= "btn btn-success btn-lg" >Submit</Button>
         <Button type="reset" class= "btn btn-info btn-lg" >Clear</Button>
     </sf:form>

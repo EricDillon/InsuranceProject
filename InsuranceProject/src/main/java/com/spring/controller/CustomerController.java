@@ -31,29 +31,32 @@ public class CustomerController {
 		return "index";
 	}
 
-	@RequestMapping("/RegSuccess")
-	public String register(@ModelAttribute("customer") Customer customer, ModelMap model) {
-		model.addAttribute("firstName", customer.getFirstName());
-		model.addAttribute("email", customer.getEmail());
-		model.addAttribute("password", customer.getPassword());
+	@RequestMapping("/regSuccess")
+	public String register(@ModelAttribute("customer") Customer customer, Model model) {
+		customerService.addCustomer(customer);
+//		model.addAttribute("firstName", customer.getFirstName());
+//		model.addAttribute("email", customer.getEmail());
+//		model.addAttribute("password", customer.getPassword());
 		
 		return "index";
 	}
 	
 	  @RequestMapping("/clientLogin")
-	  public String clientLogin(@ModelAttribute("customer") Model model, 
-			  Customer customer) {
-		  model.addAttribute(customer.getUsername());
-		  model.addAttribute(customer.getPassword());
-		  overview(customer.getUsername(), customer.getPassword());
-		return "overview";
+	  public String clientLogin(@ModelAttribute("customer") Customer customer, 
+			  Model model) {
+//		  model.addAttribute(customer.getEmail());
+//		  model.addAttribute(customer.getPassword());
+		 // overview(customer.getEmail(), customer.getPassword());
+		  
+		  model.addAttribute(customerService.getCustomer(customer.getEmail(), customer.getPassword()));
+		//return overview(customer.getEmail(), customer.getPassword());
+		  return "customer/overview";
 	   
 	       
 	    
 	}
 
 	@RequestMapping("/overview")
-
 	public String overview(String username, String password) {
 		customerService.getCustomer(username, password);
 		return "customer/overview";
@@ -93,6 +96,12 @@ public class CustomerController {
 		mod.addAttribute(c);
 
 		return "index";
+	}
+	
+	@RequestMapping("/register")
+	public String register(Model mod) {
+		mod.addAttribute(new Customer());
+		return "customer/register";
 	}
 
 }
