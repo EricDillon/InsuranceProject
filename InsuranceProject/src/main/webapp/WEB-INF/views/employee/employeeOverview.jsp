@@ -29,7 +29,7 @@
 <div class="container frosted" >
         
 
-<sf:form action = "/updateClaim.jsp" ModelAttribute = "claim">
+<sf:form action = "updateClaim" ModelAttribute = "claim">
 			Claim Id:<sf:input path="claimId"/>
 	 		<input type="Submit" value="Update Claim"/>
  </sf:form>

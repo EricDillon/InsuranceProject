@@ -13,7 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
-<body style = "background-image: url(https://cdn.pixabay.com/photo/2017/06/27/11/48/team-spirit-2447163_960_720.jpg);">
+<body style = "background-image: url(images/hands.jpg);">
 <div class = " frosted text-right">
    <a href = "employeeLogin" >Employee Login</a>
 </div>

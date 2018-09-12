@@ -24,7 +24,7 @@
 </div>
     <div class="container frosted" >
         
- <sf:form action= "/employeeOverview.jsp" class = "form-group" ModelAttribute = "employee" >
+ <sf:form action= "employeeOverview" class = "form-group" ModelAttribute = "employee" >
  	<div class="row">
  <label class="control-label col-sm-2 col-lg-offset-4" for="email">Employee Email:</label><sf:input path="email" />
  		</div>
