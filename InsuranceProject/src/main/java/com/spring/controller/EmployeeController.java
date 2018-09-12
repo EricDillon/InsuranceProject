@@ -15,10 +15,12 @@ public class EmployeeController {
 
 
 	@RequestMapping("/employeeLogin")
-	public String empLogin(@ModelAttribute("employee") Model model, 
-			Employee employee) {
-		model.addAttribute(employee.getUsername());
-		  model.addAttribute(employee.getPassword());
+	public String empLogin(	Model model	) 
+	{
+		Employee e = new Employee();
+		model.addAttribute(e);
+//		model.addAttribute(employee.getUsername());
+//		  model.addAttribute(employee.getPassword());
 		  
 		return "employee/employeeLogin";
 	}
@@ -31,22 +33,22 @@ public class EmployeeController {
 	
 	@RequestMapping("/viewClaims")
 	public String viewClaims() {
-		return "viewClaims";
+		return "employee/viewClaims";
 	}
 
 	@RequestMapping("/updateClaim") 
 	public String updateClaim() {
-		return "updateClaim";
+		return "employee/updateClaim";
 	}
 
 	@RequestMapping("/viewReports")
 	public String viewReports() {
-		return "viewReports";
+		return "employee/viewReports";
 	}
 
 	@RequestMapping("/updateReport")
 		public String updateReport() {
-			return "updateReport";
+			return "employee/updateReport";
 	}
 	
 }

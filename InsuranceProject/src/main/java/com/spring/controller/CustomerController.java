@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring.service.*;
 
@@ -33,10 +34,8 @@ public class CustomerController {
 
 	@RequestMapping("/regSuccess")
 	public String register(@ModelAttribute("customer") Customer customer, Model model) {
+		customer.setStatus(true);
 		customerService.addCustomer(customer);
-//		model.addAttribute("firstName", customer.getFirstName());
-//		model.addAttribute("email", customer.getEmail());
-//		model.addAttribute("password", customer.getPassword());
 		
 		return "index";
 	}
@@ -44,12 +43,8 @@ public class CustomerController {
 	  @RequestMapping("/clientLogin")
 	  public String clientLogin(@ModelAttribute("customer") Customer customer, 
 			  Model model) {
-//		  model.addAttribute(customer.getEmail());
-//		  model.addAttribute(customer.getPassword());
-		 // overview(customer.getEmail(), customer.getPassword());
 		  
 		  model.addAttribute(customerService.getCustomer(customer.getEmail(), customer.getPassword()));
-		//return overview(customer.getEmail(), customer.getPassword());
 		  return "customer/overview";
 	   
 	       
@@ -71,21 +66,23 @@ public class CustomerController {
 	}
 
 	@RequestMapping("/checkClaim")
-	public String checkClaim(@ModelAttribute("claim") Model model) {
+	public String checkClaim(@RequestParam int msg, Model model) {
 		
 		//THIS NEEDS TO BE CHANGED
 		int id = 0;
-		claimService.getClaim(id);
+		System.out.println(msg);
+		Claim c2 = claimService.getClaim(msg);
+		model.addAttribute(c2);
 		//THIS NEEDS TO BE CHANGED
 		
-		return "checkClaim";
+		return "customer/checkClaim";
 	}
 
 	@RequestMapping("/myClaims")
 	public String myClaim(Model model) {
 		List<Claim> claims = claimService.viewClaims();
 		model.addAttribute("claims", claims);
-		return "myClaims";
+		return "customer/viewClaims";
 	}
 
 	@RequestMapping("/submitClaim")

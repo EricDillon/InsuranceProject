@@ -29,7 +29,7 @@
     
  <div class="container frosted mainCenter" >
         <div class="row ">
-            <sf:form modelAttribute ="claim" method = "post">
+            <sf:form modelAttribute ="claims" method = "post">
             <table class="col-sm-10 col-md-6  col-lg-10 align-items-center text-center">
             <tr><th>Policy Number</th><th>Incident Date:</th><th>Incident Discription:</th><th>Claim Details</th></tr>
                 <tr><td><sf:input path="policyNum" placeholder = "Policy Number"/></td>

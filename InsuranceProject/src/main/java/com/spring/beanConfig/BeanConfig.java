@@ -8,12 +8,14 @@ import org.springframework.context.annotation.Configuration;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.spring")
-public class BeanConfig {
+public class BeanConfig  {
 
 	@Bean(name = "viewResolver")
 	public InternalResourceViewResolver getViewResolver() {
@@ -22,7 +24,7 @@ public class BeanConfig {
 		viewResolver.setSuffix(".jsp");
 		return viewResolver;
 	}
-
+	
 	@Bean
 	public LocalSessionFactoryBean getSessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
@@ -30,6 +32,10 @@ public class BeanConfig {
 		sessionFactory.setPackagesToScan(new String[] { "com.spring.model" });
 		sessionFactory.setHibernateProperties(hibernateProperties());
 		return sessionFactory;
+	}
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		// TODO Auto-generated method stub
+		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 	}
 
 	@Bean

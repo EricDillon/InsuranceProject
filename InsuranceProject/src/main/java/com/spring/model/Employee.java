@@ -35,6 +35,11 @@ public class Employee
 		this.email = email;
 	}
 	
+	public Employee()
+	{
+		
+	}
+	
 	public String getFirstname() {
 		return firstname;
 	}
