@@ -11,5 +11,6 @@ public interface ClaimService
 	public List<Claim> viewClaims();
 	public List<Claim> viewClaims(String policyNum);
 	public Claim getClaim(int id);
+	public List<Claim>getActiveClaims();
 	
 }

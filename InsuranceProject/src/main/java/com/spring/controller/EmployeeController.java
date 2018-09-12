@@ -1,18 +1,24 @@
 package com.spring.controller;
 import com.spring.model.*;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.spring.service.ClaimService;
 import com.spring.service.EmployeeService;
 @Controller
 public class EmployeeController {
 	
 	@Autowired
 	EmployeeService employeeService;
-
+	
+	@Autowired
+	ClaimService claimService;
 
 	@RequestMapping("/employeeLogin")
 	public String empLogin(	Model model	) 
@@ -26,7 +32,12 @@ public class EmployeeController {
 	}
 	
 	@RequestMapping("/employeeOverview")
-	public String employeeOverview() {
+	public String employeeOverview(Model model) {
+		List<Claim> activeClaims = claimService.getActiveClaims();
+		
+		model.addAttribute(activeClaims);
+		Claim c = activeClaims.get(0);
+		model.addAttribute(c);
 		return "employee/employeeOverview";
 		
 	}

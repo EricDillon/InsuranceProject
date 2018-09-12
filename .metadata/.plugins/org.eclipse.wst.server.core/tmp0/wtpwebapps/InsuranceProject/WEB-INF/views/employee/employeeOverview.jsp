@@ -30,7 +30,7 @@
         
 
 <sf:form action = "updateClaim" modelAttribute = "claim">
-			Claim Id:<sf:input path="claimId"/>
+			Claim Id:<sf:input path="id"/>
 	 		<input type="Submit" value="Update Claim"/>
  </sf:form>
 </div>

@@ -11,4 +11,5 @@ public interface ClaimDao
 	public List<Claim> getClaims();
 	public List<Claim> getClaims(String policyNum);
 	public Claim getClaim(int id);
+	public List<Claim> getActiveClaims();
 }

@@ -45,4 +45,9 @@ public class ClaimServiceImpl implements ClaimService
 		return dao.getClaim(id);
 	}
 
+	public List<Claim> getActiveClaims() {
+		// TODO Auto-generated method stub
+		return dao.getActiveClaims();
+	}
+
 }

@@ -87,4 +87,15 @@ public class ClaimDaoImpl implements ClaimDao {
 		return claim;
 	}
 
+	public List<Claim> getActiveClaims() {
+		List<Claim> claims;
+		Session session=sessionFactory.openSession();
+		Transaction tx= session.beginTransaction();
+		Query<Claim> theQuery =  session.createQuery("from Claim where status = 0", Claim.class);
+		claims= theQuery.getResultList();
+		tx.commit();
+		session.close();
+		return claims;
+	}
+
 }
