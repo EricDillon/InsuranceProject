@@ -1,6 +1,5 @@
 package com.spring.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,12 +20,8 @@ public class Policy
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(precision = 5)
 	private int id;
-	@Column(length = 10)
-	private String policyNum; 
-	@Column(length = 25)
-	private String firstName, lastName;
+	private String policyNum, firstName, lastName;
 	private boolean status;
 	public Policy(int id, String policyNum, String firstName, String lastName, boolean status) {
 		super();

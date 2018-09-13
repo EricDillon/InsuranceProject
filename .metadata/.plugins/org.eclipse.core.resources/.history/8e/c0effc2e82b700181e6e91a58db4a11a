@@ -21,9 +21,8 @@ public class Policy
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(precision = 5)
+	@Column(precision = 1)
 	private int id;
-	@Column(length = 10)
 	private String policyNum; 
 	@Column(length = 25)
 	private String firstName, lastName;

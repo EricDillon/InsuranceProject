@@ -1,6 +1,5 @@
 package com.spring.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,10 +23,8 @@ public class Employee
 	@GeneratedValue(strategy=GenerationType.TABLE)
 	@Column(precision = 5)
 	private int id;
-	@Column(precision = 1)
 	private int role;
 	private boolean status;
-	@Column(length = 25)
 	private String username, password, email, firstname,lastName;
 	public Employee(int id, int role, boolean status, String username, String password, String email) {
 		super();

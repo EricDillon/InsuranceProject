@@ -1,6 +1,5 @@
 package com.spring.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,11 +19,9 @@ import javax.persistence.Table;
 public class Report {
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(precision = 5)
 	private int id;
 	
 	private String descr;
-	@Column(precision = 5, scale = 2)
 	private double repairCost;
 
 	public Report()
