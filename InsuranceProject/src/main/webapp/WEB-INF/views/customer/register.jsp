@@ -50,8 +50,8 @@ body{
    				<label>First Name:</label> <sf:input path="firstName" placeholder= "John"/><br>
        			<label>Last Name:</label> <sf:input path="lastName" placeholder= "Doe" /><br>
    				<label>Email:</label><sf:input path="email" placeholder="Email@email.com"/><br>
-   				<label>Enter Password:</label><sf:input path="password" placeholder="P@55w0rd123!"/><br>
-       			<label>Re-enter Password:</label><input type="text" placeholder="P@55w0rd123!"/><br>
+   				<label>Enter Password:</label><sf:input type="password"  path="password" placeholder="P@55w0rd123!"/><br>
+       			<label>Re-enter Password:</label><input type="password" placeholder="P@55w0rd123!"/><br>
    	    	
    	    		<Button type=Submit class= "btn btn-success btn-lg" >Submit</Button>
         		<Button type="reset" class= "btn btn-info btn-lg" >Clear</Button>
