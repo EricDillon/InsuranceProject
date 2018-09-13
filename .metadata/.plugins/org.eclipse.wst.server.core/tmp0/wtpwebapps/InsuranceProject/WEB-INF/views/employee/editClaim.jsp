@@ -14,8 +14,24 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    
+  <!-- to be erased once css connection is fixed -->  
+
+<style type="text/css">
+body{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+.frosted {
+     background:rgba(255,255,255, 0.75);
+    padding: 20;
+}
+</style>  
+  
 </head>
+
+
+
 <body style = "background-image: url(https://cdn.pixabay.com/photo/2017/05/18/11/04/key-2323278_960_720.jpg);">
 <div class = " frosted text-center">
     <div class="container">

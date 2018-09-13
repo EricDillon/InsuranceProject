@@ -6,6 +6,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -22,8 +23,9 @@ public class ReportDaoImpl implements ReportDao {
 		int success=0;
 		try {
 			Session session=sessionFactory.openSession();
-			
+			Transaction tx= session.beginTransaction();
 			success=(Integer)session.save(r);
+			tx.commit();
 			session.close();
 			
 		} catch (HibernateException e) {

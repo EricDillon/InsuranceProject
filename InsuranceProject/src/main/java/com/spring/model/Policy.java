@@ -20,7 +20,7 @@ import javax.persistence.Table;
 public class Policy 
 {
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue
 	@Column(precision = 5)
 	private int id;
 	@Column(length = 10)
