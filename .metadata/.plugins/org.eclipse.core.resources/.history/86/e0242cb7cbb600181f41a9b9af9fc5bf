@@ -1,6 +1,5 @@
 package com.spring.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,17 +22,11 @@ public class Claim
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
-	@Column(precision = 5)
 	private int id;
 	
-	@Column(length = 10)
-	private String policyNum, claimDate;
-	@Column(precision = 10)
-	private int reportId, assessorId;
-	@Column(precision = 1)
-	private int status;
-	private String claimDescription,remark;
-	
+	private String policyNum;
+	private int reportId, status, assessorId;
+	private String claimDate,claimDescription,remark;
 	public Claim(int id, String policyNum, int reportId, int status, int assessorId, String claimDate,
 			String claimDescription, String remark) {
 		super();

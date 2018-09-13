@@ -1,5 +1,6 @@
 package com.spring.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,8 +21,13 @@ public class Customer
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.TABLE)
+	@Column(precision = 5)
 	private int id;
-	private String policyNum,email,username,password, firstName, lastName;
+	@Column(length = 10)
+	private String policyNum;
+	@Column(length = 25)
+	private String email,username,password, firstName, lastName;
+	@Column(length = 1)
 	boolean status;
 
 	public Customer()
