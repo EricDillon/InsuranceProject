@@ -18,7 +18,7 @@ import com.spring.service.*;
 import com.spring.model.*;
 
 @Controller
-@Scope("session")
+
 public class CustomerController {
 
 	@Autowired
@@ -26,6 +26,9 @@ public class CustomerController {
 	
 	@Autowired
 	CustomerService customerService;
+	
+	@Autowired
+	ReportService reportService;
 	
 	@RequestMapping("/")
 	public String index(Model model) {
@@ -62,7 +65,7 @@ public class CustomerController {
 
 	@RequestMapping(value="/makeclaim")
 	public String makeClaim( Model model) {
-//		claimService.addClaim(new Claim());
+
 		model.addAttribute(new Claim());
 		return "customer/makeClaim";
 	}
@@ -89,8 +92,12 @@ public class CustomerController {
 
 	@RequestMapping("/submitClaim")
 	public String submitClaim(@ModelAttribute("claim") Claim cl, Model mod) {
+		
+		Report report = new Report();
+		reportService.addReport(report);
+		cl.setReportId(report.getId());
 		claimService.addClaim(cl);
-
+		
 		Customer c = new Customer();
 		mod.addAttribute(c);
 
