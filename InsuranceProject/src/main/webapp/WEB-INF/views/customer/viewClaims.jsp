@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix ="sf" %>
+<%@ taglib prefix = "jstl" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -43,16 +44,19 @@ body{
     
  <div class="container frosted mainCenter" >
         <div class="row ">
-            <sf:form modelAttribute ="claims" method = "post">
-            <table class="col-sm-10 col-md-6  col-lg-10 align-items-center text-center">
-            <tr><th>Policy Number</th><th>Incident Date:</th><th>Incident Discription:</th><th>Claim Details</th></tr>
-                <tr><td><sf:input path="policyNum" placeholder = "Policy Number"/></td>
-            <td><sf:input type= "date" path="claimDate"/></td><td>
-                <sf:input type="textarea" path="claimDescription"/></td>
-                <td><a href= "checkClaim">View Claim</a></td></tr>
             
+            <table class="col-sm-10 col-md-6  col-lg-10 align-items-center text-center">
+            <tr><th>Claim ID</th><th>Incident Date:</th><th>Incident Discription:</th><th>Status</th></tr>
+           
+            <jstl:forEach var="listValue" items="${lists}">
+            <tr><td>${claim.id}</td>
+            <td>${claim.claimDate}</td>
+            <td><textarea rows="5" cols="30">${claim.claimDescription}</textarea></td>
+            <td>${claim.status}></td>
+                <td><a href= "checkClaim/?id=${claim.id()%}">View Claim</a></td></tr>
+          </jstl:forEach>
 		    </table>
-           </sf:form> 
+           
      </div>
     </div>
 

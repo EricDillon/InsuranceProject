@@ -29,7 +29,7 @@ body{
 </style>  
     
 </head>
-<body style = "background-image: url(https://images.unsplash.com/photo-1518169640858-0d622b058e5c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5ffa10ff5bac3a77cb7de6e4e7164787&w=1000&q=80);">
+<body style = "background-image: url(https://static1.squarespace.com/static/5a31d4d129f187383aad4a32/t/5a4418f553450ac1b236617d/1514412462277/helpinghands.jpg);">
 <div class = " frosted text-left">
     <div class="container">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdyH1-62h85KJb2mQ9ui8lG_4Jn4iw_UaEHSx16P5BaO6D2tU0" class="logo img-circle col-md-4 " alt="hands holding a family">
