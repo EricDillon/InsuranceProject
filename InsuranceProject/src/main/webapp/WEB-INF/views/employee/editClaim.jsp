@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix ="sf" %>
-
+<%@ taglib prefix = "jstl" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -50,7 +50,28 @@ body{
 		<table class="col-sm-12 col-md-4  col-lg-6 align-items-center text-center">
             <tr><th>Policy Number:</th><td><sf:input path="policyNum" placeholder = "Policy Number"/></td></tr>
             <tr><th>Incident Date:</th><td><sf:input type= "date" path="claimDate"/></td></tr>
-            <tr><th>Incident Discription:</th><td><sf:input path="claimDescription"/></td></tr>
+            <tr><th>Incident Description:</th><td><sf:input path="claimDescription"/></td></tr>
+            	
+            	<sf:form action= "submitClaim" modelAttribute ="report" method = "post" class="well">
+            		<tr><th>Report Id:</th><td><sf:input path = "id"/></td></tr>
+            		<tr><th>Report Description: </th><td><sf:textarea path = "descr" rows="5" cols="30"/></td></tr>
+            		<tr><th>Repair Cost:</th><td><sf:input path = "repairCost"/></td></tr>
+          		</sf:form>
+          		
+          	<sf:select path="assessor">
+          		 <jstl:forEach items="${assessors}" var="assessor" >
+          		 	<option value="${assessor.id}"> ${assessor.firstname}, ${assessor.lastname}, ${assessor.id} </option>
+          		</jstl:forEach>
+          	</sf:select>
+          	<sf:select path="status" value = "Pending">
+          		<option value= -1 > Rejected </option>
+          		<option value= 0 > Pending </option>
+          		<option value = 1> Approved </option>
+          	</sf:select>
+          	
+          	<tr><th>Remarks: </th><td><sf:textarea path = "remarks" rows="3" cols="40"/></td></tr>
+          	
+          	
             <tr><td><Button type=Submit class= "btn btn-success btn-lg" >Submit Claim</Button></td>
                 <td><Button type="reset" class= "btn btn-info btn-lg" >Clear Claim</Button></td></tr>
 		</table>
