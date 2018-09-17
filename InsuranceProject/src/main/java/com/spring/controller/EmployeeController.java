@@ -55,12 +55,12 @@ public class EmployeeController {
 	public String editClaim(@ModelAttribute("claim") Claim claim, @ModelAttribute("report") Report report,
 			@ModelAttribute("assessors") Employee emp, Model model) {
 	
-		List<Employee> assessor = employeeService.viewEmployee(emp.getRole());
+		List<Employee> assessor = employeeService.viewEmployee(1);
 		
 		Claim c = claimService.getClaim(claim.getId());
 		Report r = reportService.getReport(c.getReportId());
 		
-		model.addAttribute("assessor", emp);
+		model.addAttribute("assessors", assessor);
 		model.addAttribute("claim", c);
 		model.addAttribute("report", r);
 		
@@ -68,9 +68,9 @@ public class EmployeeController {
 	}
 	
 	@RequestMapping("/updateClaim")
-	public String updateClaim() {
-		
-		
+	public String updateClaim(@ModelAttribute("claim") Claim claim, @ModelAttribute("report") Report report) {
+		claimService.updateClaim(claim);
+
 		return "employee/updateClaim";
 	}
 
