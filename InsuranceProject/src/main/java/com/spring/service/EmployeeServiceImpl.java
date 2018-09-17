@@ -39,4 +39,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return dao.login(username, password);
 	}
 
+	public List<Employee> viewEmployee(int role) {
+		// TODO Auto-generated method stub
+		return dao.getEmployees(role);
+	}
+
+
 }

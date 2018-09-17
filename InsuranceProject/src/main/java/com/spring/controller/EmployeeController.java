@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.spring.service.ClaimService;
 import com.spring.service.EmployeeService;
+import com.spring.service.ReportService;
 @Controller
 public class EmployeeController {
 	
@@ -19,6 +20,9 @@ public class EmployeeController {
 	
 	@Autowired
 	ClaimService claimService;
+	
+	@Autowired
+	ReportService reportService;
 
 	@RequestMapping("/employeeLogin")
 	public String empLogin(	Model model	) 
@@ -48,15 +52,30 @@ public class EmployeeController {
 	}
 
 	@RequestMapping("/editClaim") 
-	public String editClaim(@ModelAttribute("claim") Claim claim, Model model) {
-		Claim c = claimService.getClaim(claim.getId());
-		model.addAttribute("claim", c);
-		return "employee/editClaim";
-		
+	public String editClaim(@ModelAttribute("claim") Claim claim, @ModelAttribute("report") Report report,
+			@ModelAttribute("assessors") Employee emp, Model model) {
 	
+		List<Employee> assessor = employeeService.viewEmployee(emp.getRole());
+		
+		Claim c = claimService.getClaim(claim.getId());
+		Report r = reportService.getReport(c.getReportId());
+		
+		model.addAttribute("assessor", emp);
+		model.addAttribute("claim", c);
+		model.addAttribute("report", r);
+		
+		return "employee/editClaim";
+	}
+	
+	@RequestMapping("/updateClaim")
+	public String updateClaim() {
+		
+		
+		return "employee/editClaim";
 	}
 
 	@RequestMapping("/viewReports")
+	
 	public String viewReports() {
 		return "employee/viewReports";
 	}

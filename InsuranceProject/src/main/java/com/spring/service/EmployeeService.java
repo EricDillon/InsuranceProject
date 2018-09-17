@@ -10,9 +10,7 @@ public interface EmployeeService {
 		
 		public List<Employee> viewEmployee();
 		public List<Employee> viewEmployee(String policyNum);
+		public List<Employee> viewEmployee(int role);
 		public Employee getEmployee(int id);
 	    public Employee getEmployee(String username, String password);
-		
-	
-	
 }
