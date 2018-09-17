@@ -44,7 +44,7 @@ body{
         <div class="row ">
             <sf:form modelAttribute ="claim" method = "post">
             <table class="col-sm-10 col-md-6  col-lg-10 align-items-center text-center">
-            <tr><th>Claim ID</th><th>Incident Date:</th><th>Incident Discription:</th><th>Status</th></tr>
+            <tr><th>Claim ID</th><th>Incident Date:</th><th>Incident Description:</th><th>Status</th></tr>
                 <tr><td><sf:input path="id" placeholder = "Policy Number"/></td>
             <td><sf:input type= "date" path="claimDate"/></td><td>
                 <sf:textarea path="claimDescription" rows="5" cols="30" /></td>
