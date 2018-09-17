@@ -35,7 +35,7 @@ public class EmployeeController {
 	public String employeeOverview(Model model) {
 		List<Claim> activeClaims = claimService.getActiveClaims();
 		
-		model.addAttribute(activeClaims);
+		model.addAttribute("claims", activeClaims);
 		Claim c = activeClaims.get(0);
 		model.addAttribute(c);
 		return "employee/employeeOverview";
@@ -48,8 +48,12 @@ public class EmployeeController {
 	}
 
 	@RequestMapping("/editClaim") 
-	public String editClaim() {
+	public String editClaim(@ModelAttribute("claim") Claim claim, Model model) {
+		Claim c = claimService.getClaim(claim.getId());
+		model.addAttribute("claim", c);
 		return "employee/editClaim";
+		
+	
 	}
 
 	@RequestMapping("/viewReports")
