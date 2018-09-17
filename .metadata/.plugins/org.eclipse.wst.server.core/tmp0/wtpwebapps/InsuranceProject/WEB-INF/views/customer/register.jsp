@@ -14,9 +14,22 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<!-- to be erased once css connection is fixed -->  
+<style type="text/css">
+body{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+.frosted {
+     background:rgba(255,255,255, 0.75);
+    padding: 20;
+}
+</style>  
     
 </head>
-<body style = "background-image: url(https://cdn.pixabay.com/photo/2017/05/18/11/04/key-2323278_960_720.jpg);">
+<body style = "background-image: url(https://images.unsplash.com/photo-1518169640858-0d622b058e5c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5ffa10ff5bac3a77cb7de6e4e7164787&w=1000&q=80);">
 <div class = " frosted text-left">
     <div class="container">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdyH1-62h85KJb2mQ9ui8lG_4Jn4iw_UaEHSx16P5BaO6D2tU0" class="logo img-circle col-md-4 " alt="hands holding a family">
@@ -31,17 +44,20 @@
         <div class="row ">
      
 			<!--   String email, String username, String password, 	 -->
-   <sf:form class = "form-group col-sm-12 col-md-4  col-lg-6 col-md-offset-2" action= "regSuccess" modelAttribute = "customer" >
-   		<label>First Name:</label> <sf:input path="firstName" /><br>
-       <label>Last Name:</label> <sf:input path="lastName" /><br>
-   		<label>Email:</label><sf:input path="email" /><br>
-   		<label>Enter Password:</label><sf:input path="password"/><br>
-       <label>Re-enter Password:</label><sf:input path=""/><br>
-   	    <Button type=Submit class= "btn btn-success btn-lg" >Submit</Button>
-        <Button type="reset" class= "btn btn-info btn-lg" >Clear</Button>
-    </sf:form>
+   			<sf:form class = "form-group col-sm-12 col-md-4  col-lg-6 col-md-offset-2" action= "regSuccess" modelAttribute = "customer" >
+   				<label>Policy Number:</label> <sf:input path="policyNum" placeholder = "12345678"/><br>
+   				<label>User Name:</label> <sf:input path="username" placeholder= "JohnDoe"/><br>
+   				<label>First Name:</label> <sf:input path="firstName" placeholder= "John"/><br>
+       			<label>Last Name:</label> <sf:input path="lastName" placeholder= "Doe" /><br>
+   				<label>Email:</label><sf:input path="email" placeholder="Email@email.com"/><br>
+   				<label>Enter Password:</label><sf:input type="password"  path="password" placeholder="P@55w0rd123!"/><br>
+       			<label>Re-enter Password:</label><input type="password" placeholder="P@55w0rd123!"/><br>
+   	    	
+   	    		<Button type=Submit class= "btn btn-success btn-lg" >Submit</Button>
+        		<Button type="reset" class= "btn btn-info btn-lg" >Clear</Button>
+    		</sf:form>
+    	</div><!-- row 1 -->
+    </div><!-- container -->
     
-     </div>
-    </div>
 </body>
 </html>

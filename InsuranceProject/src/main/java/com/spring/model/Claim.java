@@ -22,7 +22,7 @@ import javax.persistence.Table;
 public class Claim 
 {
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue
 	@Column(precision = 5)
 	private int id;
 	

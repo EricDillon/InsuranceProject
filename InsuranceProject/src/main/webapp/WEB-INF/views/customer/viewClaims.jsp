@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix ="sf" %>
+<%@ taglib prefix = "jstl" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -14,7 +15,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    
+   
+   <!-- to be erased once css connection is fixed -->  
+<style type="text/css">
+body{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+.frosted {
+     background:rgba(255,255,255, 0.75);
+    padding: 20;
+}
+</style>   
+
+
 </head>
 <body style = "background-image: url(https://cdn.pixabay.com/photo/2017/05/18/11/04/key-2323278_960_720.jpg);">
 <div class = " frosted text-left">
@@ -29,16 +44,19 @@
     
  <div class="container frosted mainCenter" >
         <div class="row ">
-            <sf:form modelAttribute ="claims" method = "post">
-            <table class="col-sm-10 col-md-6  col-lg-10 align-items-center text-center">
-            <tr><th>Policy Number</th><th>Incident Date:</th><th>Incident Discription:</th><th>Claim Details</th></tr>
-                <tr><td><sf:input path="policyNum" placeholder = "Policy Number"/></td>
-            <td><sf:input type= "date" path="claimDate"/></td><td>
-                <sf:input type="textarea" path="claimDescription"/></td>
-                <td><a href= "checkClaim">View Claim</a></td></tr>
             
+            <table class="col-sm-10 col-md-6  col-lg-10 align-items-center text-center">
+            <tr><th>Claim ID</th><th>Incident Date:</th><th>Incident Discription:</th><th>Status</th></tr>
+           
+            <jstl:forEach var="listValue" items="${lists}">
+            <tr><td>${claim.id}</td>
+            <td>${claim.claimDate}</td>
+            <td><textarea rows="5" cols="30">${claim.claimDescription}</textarea></td>
+            <td>${claim.status}></td>
+                <td><a href= "checkClaim/?id=${claim.id()%}">View Claim</a></td></tr>
+          </jstl:forEach>
 		    </table>
-           </sf:form> 
+           
      </div>
     </div>
 

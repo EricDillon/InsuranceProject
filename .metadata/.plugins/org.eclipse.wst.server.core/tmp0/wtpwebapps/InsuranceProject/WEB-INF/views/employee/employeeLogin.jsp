@@ -12,7 +12,25 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  
+  <!-- to be erased once css connection is fixed -->  
+<style type="text/css">
+body{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+.frosted {
+     background:rgba(255,255,255, 0.75);
+    padding: 20;
+}
+</style>  
 </head>
+
+
+
+
+
 <body style = "background-image: url(https://cdn.pixabay.com/photo/2017/06/27/11/48/team-spirit-2447163_960_720.jpg);">
 <div class = " frosted text-right">
    <a href = "/employeeLogin" >Employee Login</a>
@@ -29,7 +47,7 @@
  <label class="control-label col-sm-2 col-lg-offset-4" for="email">Employee Email:</label><sf:input path="email" />
  		</div>
  		<div class = "row">
-   	<label class="control-label col-sm-2 col-lg-offset-4" for="password">Password:</label><sf:input path="password"/>
+   	<label class="control-label col-sm-2 col-lg-offset-4" for="password">Password:</label><sf:input type="password" path="password"/>
    	</div>
    	<div class = "row">
    		<input class=" col-sm-2 col-lg-offset-4" type=submit value = "login"/> 

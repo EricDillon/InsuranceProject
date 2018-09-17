@@ -29,7 +29,7 @@ body{
 </style>  
     
 </head>
-<body style = "background-image: url(https://images.unsplash.com/photo-1518169640858-0d622b058e5c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5ffa10ff5bac3a77cb7de6e4e7164787&w=1000&q=80);">
+<body style = "background-image: url(https://static1.squarespace.com/static/5a31d4d129f187383aad4a32/t/5a4418f553450ac1b236617d/1514412462277/helpinghands.jpg);">
 <div class = " frosted text-left">
     <div class="container">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdyH1-62h85KJb2mQ9ui8lG_4Jn4iw_UaEHSx16P5BaO6D2tU0" class="logo img-circle col-md-4 " alt="hands holding a family">
@@ -50,8 +50,8 @@ body{
    				<label>First Name:</label> <sf:input path="firstName" placeholder= "John"/><br>
        			<label>Last Name:</label> <sf:input path="lastName" placeholder= "Doe" /><br>
    				<label>Email:</label><sf:input path="email" placeholder="Email@email.com"/><br>
-   				<label>Enter Password:</label><sf:input path="password" placeholder="P@55w0rd123!"/><br>
-       			<label>Re-enter Password:</label><input type="text" placeholder="P@55w0rd123!"/><br>
+   				<label>Enter Password:</label><sf:input type="password"  path="password" placeholder="P@55w0rd123!"/><br>
+       			<label>Re-enter Password:</label><input type="password" placeholder="P@55w0rd123!"/><br>
    	    	
    	    		<Button type=Submit class= "btn btn-success btn-lg" >Submit</Button>
         		<Button type="reset" class= "btn btn-info btn-lg" >Clear</Button>

@@ -47,9 +47,9 @@ public class EmployeeController {
 		return "employee/viewClaims";
 	}
 
-	@RequestMapping("/updateClaim") 
-	public String updateClaim() {
-		return "employee/updateClaim";
+	@RequestMapping("/editClaim") 
+	public String editClaim() {
+		return "employee/editClaim";
 	}
 
 	@RequestMapping("/viewReports")

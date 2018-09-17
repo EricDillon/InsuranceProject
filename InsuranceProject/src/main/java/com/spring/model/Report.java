@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Table(name="assinsurance_rprt_tbl")
 public class Report {
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@GeneratedValue
 	@Column(precision = 5)
 	private int id;
 	
