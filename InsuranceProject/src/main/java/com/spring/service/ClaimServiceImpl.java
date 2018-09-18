@@ -44,6 +44,12 @@ public class ClaimServiceImpl implements ClaimService
 	{
 		return dao.getClaim(id);
 	}
+	
+	public int updateClaim(Claim c)
+	{
+		dao.editClaim(c);
+		return 0;
+	}
 
 	public List<Claim> getActiveClaims() {
 		// TODO Auto-generated method stub

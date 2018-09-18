@@ -52,7 +52,7 @@ public class EmployeeController {
 	}
 
 	@RequestMapping("/editClaim") 
-	public String editClaim(@ModelAttribute("claim") Claim claim, @ModelAttribute("report") Report report,
+	public String editClaim(@ModelAttribute("claim") Claim claim,
 			@ModelAttribute("assessors") Employee emp, Model model) {
 	
 		List<Employee> assessor = employeeService.viewEmployee(1);
@@ -69,13 +69,19 @@ public class EmployeeController {
 	
 	@RequestMapping("/updateClaim")
 	public String updateClaim(@ModelAttribute("claim") Claim claim, @ModelAttribute("report") Report report) {
+		updateTheReport(report);
 		claimService.updateClaim(claim);
 
 		return "employee/updateClaim";
 	}
+	
+	public int updateTheReport(Report r)
+	{
+		reportService.editReport(r);
+		return 0;
+	}
 
 	@RequestMapping("/viewReports")
-	
 	public String viewReports() {
 		return "employee/viewReports";
 	}

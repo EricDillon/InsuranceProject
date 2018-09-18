@@ -23,9 +23,14 @@ public class ReportServiceImpl implements ReportService{
 		return dao.getReports();
 	}
 
-	public Report getReport(int id) {
+	public Report getReport(int rid) {
 		// TODO Auto-generated method stub
-		return dao.getReport(id);
+		return dao.getReport(rid);
+	}
+
+	public int editReport(Report r) {
+		// TODO Auto-generated method stub
+		return dao.editReport(r);
 	}
 
 }

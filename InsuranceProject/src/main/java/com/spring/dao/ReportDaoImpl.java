@@ -44,13 +44,30 @@ public class ReportDaoImpl implements ReportDao {
 		return reports;
 	}
 
-	public Report getReport(int id) {
+	public Report getReport(int rid) {
 		Report report;
 		Session session=sessionFactory.openSession();
-		Query<Report> theQuery =  session.createQuery("from Report where id =" + id, Report.class);
-		report= theQuery.getSingleResult();
+		Query<Report> theQuery =  session.createQuery("from Report where rid =" + rid, Report.class);
+		report = theQuery.getSingleResult();
 		session.close();
 		return report;
+	}
+
+	public int editReport(Report r) {
+		// TODO Auto-generated method stub
+		int success=0;
+		try {
+			Session session=sessionFactory.openSession();
+			Transaction tx= session.beginTransaction();
+			
+			session.update(r);
+			tx.commit();
+			session.close();
+			
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		}
+		return success;
 	}
 
 }

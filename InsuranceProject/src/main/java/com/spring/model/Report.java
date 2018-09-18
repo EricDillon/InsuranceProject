@@ -21,7 +21,7 @@ public class Report {
 	@Id
 	@GeneratedValue
 	@Column(precision = 5)
-	private int id;
+	private int rid;
 	
 	private String descr;
 	@Column(precision = 5, scale = 2)
@@ -31,21 +31,21 @@ public class Report {
 	{
 		
 	}
-	public Report(int id, String descr, double repairCost) {
+	public Report(int rid, String descr, double repairCost) {
 		super();
-		this.id = id;
+		this.rid = rid;
 		this.descr = descr;
 		this.repairCost = repairCost;
 	}
 
-	public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
 
+	public int getRid() {
+		return rid;
+	}
+	public void setRid(int rid) {
+		this.rid = rid;
+	}
 	public String getDescr() {
 		return descr;
 	}

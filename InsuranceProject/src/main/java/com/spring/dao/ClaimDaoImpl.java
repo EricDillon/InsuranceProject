@@ -86,6 +86,44 @@ public class ClaimDaoImpl implements ClaimDao {
 		session.close();
 		return claim;
 	}
+	
+	public int editClaim(Claim c)
+	{
+		System.out.println(c.getAssessorId());
+		System.out.println(c.getClaimDate());
+		System.out.println(c.getClaimDescription());
+		System.out.println(c.getId());
+		System.out.println(c.getPolicyNum());
+		System.out.println(c.getRemark());
+		System.out.println(c.getReportId());
+		System.out.println(c.getStatus());
+		
+		int success=0;
+		try {
+			Session session=sessionFactory.openSession();
+			Transaction tx= session.beginTransaction();
+			
+			session.update(c);
+			tx.commit();
+			session.close();
+			
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		}
+		return success;
+		
+	}
+//	public void updateStatus(int id, int status)
+//	{
+//		Session session=sessionFactory.openSession();
+//		Transaction tx= session.beginTransaction();
+//		Claim c = getClaim(id);
+//		c.setStatus(status);
+//		session.update(c);
+//		tx.commit();
+//		session.close();
+//		
+//	}
 
 	public List<Claim> getActiveClaims() {
 		List<Claim> claims;

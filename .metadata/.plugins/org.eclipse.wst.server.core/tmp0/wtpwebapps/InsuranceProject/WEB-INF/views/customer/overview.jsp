@@ -46,7 +46,7 @@ body{
 				 <sf:form action= "overview" modelAttribute = "customer" >
    					<table>
                         <tr><th>Policy Number:</th> <td><sf:input path="policyNum" readonly = "true"/></td></tr>
-                        <tr><th>Name:</th> <td><sf:input path="firstName" readonly = "true"/></td><td><sf:input path="firstName" readonly = "true"/></td></tr>
+                        <tr><th>Name:</th> <td><sf:input path="firstName" readonly = "true"/></td><td><sf:input path="lastName" readonly = "true"/></td></tr>
                         <tr><th>UserName:</th> <td><sf:input path="username" readonly = "true"/></td></tr>
    						<tr><th>Email:</th> <td><sf:input path="email" readonly = "true"/></td></tr>
    						<tr><th>Status:</th> <td><sf:input path="status" readonly = "true"/></td></tr>

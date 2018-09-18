@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" 
+	pageEncoding="UTF-8" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix ="sf" %>
 <%@ taglib prefix = "jstl" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false"%>
@@ -46,21 +47,22 @@ body{
  <div class="container frosted mainCenter" >
         <div class="row ">
         
-<sf:form action= "submitClaim" modelAttribute ="claim" method = "post">
+<sf:form action= "updateClaim" modelAttribute ="claim" method = "post">
 		<table class="col-sm-12 col-md-4  col-lg-6 align-items-center text-center">
             <tr><th>Policy Number:</th><td><sf:input path="policyNum" placeholder = "Policy Number"/></td></tr>
             <tr><th>Incident Date:</th><td><sf:input type= "date" path="claimDate"/></td></tr>
             <tr><th>Incident Description:</th><td><sf:input path="claimDescription"/></td></tr>
-            	
-            	<sf:form action= "submitClaim" modelAttribute ="report" method = "post" class="well">
-            		<tr><th>Report Id:</th><td><sf:input path = "id"/></td></tr>
+            <!-- ERIC ADD -->
+            <sf:input type= "hidden" path = "id"/>
+            	<sf:form modelAttribute ="report" method = "post" class="well">
+            		<tr><th>Report Id:</th><td><sf:input path = "rid"/></td></tr>
             		<tr><th>Report Description: </th><td><sf:textarea path = "descr" rows="5" cols="30"/></td></tr>
             		<tr><th>Repair Cost:</th><td><sf:input path = "repairCost"/></td></tr>
           		</sf:form>
           		
-          	<sf:select path="assessor">
+          	<sf:select path="assessorId">
           		 <jstl:forEach items="${assessors}" var="assessor" >
-          		 	<option value="${assessor.id}"> ${assessor.firstname}, ${assessor.lastname}, ${assessor.id} </option>
+          		 	<option value="${assessor.id}"> ${assessor.firstname}, ${assessor.lastName}, ${assessor.id} </option>
           		</jstl:forEach>
           	</sf:select>
           	<sf:select path="status" value = "Pending">
@@ -69,7 +71,7 @@ body{
           		<option value = 1> Approved </option>
           	</sf:select>
           	
-          	<tr><th>Remarks: </th><td><sf:textarea path = "remarks" rows="3" cols="40"/></td></tr>
+          	<tr><th>Remarks: </th><td><sf:textarea path = "remark" rows="3" cols="40"/></td></tr>
           	
           	
             <tr><td><Button type=Submit class= "btn btn-success btn-lg" >Submit Claim</Button></td>

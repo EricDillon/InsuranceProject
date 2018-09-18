@@ -7,6 +7,7 @@ import com.spring.model.Report;
 public interface ReportDao 
 {
 	public int addReport(Report r);
+	public int editReport(Report r);
 	public List<Report> getReports();
-	public Report getReport(int id);
+	public Report getReport(int rid);
 }

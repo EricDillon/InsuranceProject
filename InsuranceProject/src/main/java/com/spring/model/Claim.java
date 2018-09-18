@@ -31,8 +31,8 @@ public class Claim
 	@Column(precision = 10)
 	private int reportId, assessorId;
 	@Column(precision = 1)
-	private int status;
-	private String claimDescription,remark;
+	private int status = 0;
+	private String claimDescription, remark;
 	
 	public Claim(int id, String policyNum, int reportId, int status, int assessorId, String claimDate,
 			String claimDescription, String remark) {
