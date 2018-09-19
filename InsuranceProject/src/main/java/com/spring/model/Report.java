@@ -61,9 +61,5 @@ public class Report {
 	public void setRepairCost(double repairCost) {
 		this.repairCost = repairCost;
 	}
-	
-	
-	
-	
 
 }
