@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix ="sf" %>
-
+<%@page  isELIgnored = "false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -66,7 +66,8 @@ body{
                      <input id="msg" type="text" class="form-control" name="msg" placeholder="12345678">
                    <button type="Submit"  class="btn btn-warning btn-block"> <h2>Check Claim Status</h2></button>
                 </form><br><br>
-                <form action = "myClaims">
+                <form action = "myClaims" method = post>
+                	<input type=hidden name="policyNum" value="${customer.policyNum}">
                    <button type="Submit"  class="btn btn-info btn-block"> <h2>View MyClaims</h2></button>
                 </form>
            </div><!-- out col #1 -->

@@ -100,7 +100,15 @@ public class Claim
 		this.remark = remark;
 	}
 	
-	
+	public String getTextStatus()
+	{
+		switch(getStatus())
+		{
+			case -1: return "Rejected";
+			case 1: return "Accepted";
+			default: return "Pending";
+		}
+	}
 	
 	
 	

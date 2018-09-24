@@ -54,8 +54,8 @@ body{
             <tr><td>${listValue.id}</td>
             <td>${listValue.claimDate}</td>
             <td><textarea rows="5" cols="30">${listValue.claimDescription}</textarea></td>
-            <td>${listValue.status}</td>
-                <td><a href= "checkClaim/?id=${listValue.id}">View Claim</a></td></tr>
+            <td>${listValue.getTextStatus()}</td>
+                <td><a href= "checkMyClaim/?id=${listValue.id}">View Claim</a></td></tr>
           </jstl:forEach>
 		    </table>
 		    

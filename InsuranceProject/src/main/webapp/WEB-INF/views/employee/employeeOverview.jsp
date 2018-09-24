@@ -62,8 +62,8 @@ body{
            	<td>${claim.policyNum}</td>
             <td>${claim.claimDate}</td>
             <td><textarea rows="5" cols="30">${claim.claimDescription}</textarea></td>
-            <td>${claim.status}</td>
-                <td><a href= "checkClaim/?id=${claim.id}">View Claim</a></td></tr>
+            <td>${claim.getTextStatus()}</td>
+                <td><a href= "editClaim/?id=${claim.id}">View Claim</a></td></tr>
           </jstl:forEach>
 		    </table>     
      </div>

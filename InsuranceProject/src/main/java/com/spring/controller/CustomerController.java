@@ -82,10 +82,24 @@ public class CustomerController {
 		
 		return "customer/checkClaim";
 	}
+	
+	@RequestMapping("/checkMyClaim")
+	public String checkMyClaim(@ModelAttribute("claim") Claim claim, Model model) {
+		
+		//THIS NEEDS TO BE CHANGED
+		int id = 0;
+		System.out.println(claim.getPolicyNum());
+		Claim c2 = claimService.getClaim(claim.getId());
+		model.addAttribute(c2);
+		//THIS NEEDS TO BE CHANGED
+		
+		return "customer/checkClaim";
+	}
+	
 
 	@RequestMapping("/myClaims")
-	public String myClaim(Model model) {
-		List<Claim> claims = claimService.viewClaims();
+	public String myClaim(@RequestParam String policyNum,Model model) {
+		List<Claim> claims = claimService.viewClaims(policyNum);
 		model.addAttribute("claims", claims);
 		return "customer/viewClaims";
 	}
